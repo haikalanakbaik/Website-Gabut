@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website Gabut Hycal.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="h-screen flex flex-col justify-center items-center gap-4 bg-blue-300"
+    >
+      <div
+        class="bg-gradient-to-r from-blue-500 to-teal-200 py-28 rounded-xl shadow-lg shadow-blue-700/50"
+      >
+        <h2 id="judul" class="text-center font-bold m-10"></h2>
+        <div id="ton" class="flex gap-32 justify-center">
+          <button
+            id="yes"
+            type="button"
+            class="px-5 py-3 bg-blue-300 rounded-lg hover:bg-blue-500 shadow-lg shadow-blue-900/50 font-semibold transition-all duration-700 ease-in-out"
+          >
+            Yes
+        </button>
+          <button
+            id="no"
+            type="button"
+            class="px-5 py-3 bg-blue-300 rounded-lg hover:bg-blue-500 shadow-lg shadow-blue-900/50 font-semibold transition-all duration-700 ease-in-out"
+          >
+            No
+        </button>
+        </div>
+      </div>
+    <footer class="mt-20 text-center text-gray-500 text-sm">
+        &copy; <span id="year"></span> Coding By Hycal. All rights reserved.
+    </footer>
+    </div>
+
+    <script>
+      let nama = prompt("Masukan Nama Anda");
+      if (!nama) {
+        nama = "Orang Misterius";
+      }
+      const utkyes = document.getElementById("judul");
+      utkyes.textContent = `Halo, ${nama} Menurut Kamu Aku Ganteng Gak?`;
+
+      const mbol = document.getElementById("yes");
+      mbol.addEventListener("click", function () {
+        alert(
+          "Makasihhh, Memang banyak yang bilang yaa udah biasalah dibilang ganteng gitu, jadi gak terlalu naik kuping :)"
+        );
+        location.reload();
+      });
+
+      const mbol1 = document.getElementById("ton");
+
+      mbol1.addEventListener("click", function () {
+        const puss = document.querySelector("button:nth-child(2)");
+        mbol1.removeChild(puss);
+      });
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
